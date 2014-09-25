@@ -11,6 +11,10 @@ Just grab the script, make it executable and run it like this::
 	sudo /path/to/update-gitlab-omnibus.sh
 
 
+Thanks
+------
+
+While it was an idea on it's own to create this script, I also looked for existing solutions. The script is somewhat inspired by the work of https://github.com/heichblatt/gitlab-omnibus-update - thanks!
 
 License
 -------
