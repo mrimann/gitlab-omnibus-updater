@@ -60,6 +60,9 @@ gitlab-ctl stop unicorn
 # Stop Sidekiq
 gitlab-ctl stop sidekiq
 
+# If you are upgrading from 7.3.0
+sudo gitlab-ctl stop nginx
+
 # Create a backup
 gitlab-rake gitlab:backup:create
 
