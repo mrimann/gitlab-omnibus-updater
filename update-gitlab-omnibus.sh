@@ -60,6 +60,9 @@ gitlab-ctl stop unicorn
 # Stop Sidekiq
 gitlab-ctl stop sidekiq
 
+# Stop Nginx
+gitlab-ctl stop nginx
+
 # Create a backup
 gitlab-rake gitlab:backup:create
 
