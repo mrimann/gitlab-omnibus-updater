@@ -5,6 +5,9 @@ This is just a small script to update an existing Gitlab instance to a newer ver
 
 This is tested on Ubuntu 14.04 with GiLab Omnibus 7.3.x
 
+**ATTENTION** Since v7.10.4 something does not work anymore, I tried to fix it but couldn't find an easy solution. The Gitlab guys started to publish their own *.deb repositories which probably makes this script useless at all.
+
+
 How to update GitLab?
 ---------------------
 
