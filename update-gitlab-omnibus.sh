@@ -10,6 +10,10 @@ COL_RESET=$ESC_SEQ"39;49;00m"
 echo -e $COL_BLUE"Let's update GitLab, ..."$COL_RESET
 
 
+echo -e $COL_RED"Please switch to the official Debian/Ubuntu packages and don't use this script anymore, see README."$COL_RESET
+exit 1
+
+
 # Find the download URL
 downloadUrl=$(curl -s https://about.gitlab.com/downloads/ | grep "wget" | grep "ubuntu-14.04" | sed -e 's/^ *//' -e 's/ *$//' | sed -e 's/<pre\>.*wget //')
 if [ $? -eq 0 ]; then
