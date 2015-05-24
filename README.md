@@ -9,7 +9,7 @@ Details on how to switch to the official Debian/Ubuntu packages can be found her
 
 This is just a small script to update an existing Gitlab instance to a newer version. Basically it just executes the commands from the Gitlab documentation, but in an automated way (hint: automation).
 
-This is tested on Ubuntu 14.04 with GiLab Omnibus 7.3.x
+This is tested on Ubuntu 14.04 with GiLab Omnibus ~7.3
 
 
 How to update GitLab?

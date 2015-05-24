@@ -36,7 +36,7 @@ fi
 
 
 # Check which version is installed locally.
-installedVersion=$( dpkg -s gitlab|grep Version|cut -d\: -f2|sed 's/\ //g' )
+installedVersion=$( (dpkg -s gitlab-ce 2>/dev/null || dpkg -s gitlab) | grep '^Version' | cut -d\: -f2 |sed 's/\ //g' )
 if [ $? -eq 0 ]; then
 	echo -e $COL_GREEN"Currently installed version is: ${installedVersion}"$COL_RESET
 else
@@ -57,28 +57,9 @@ fi
 # Download the file
 wget ${downloadUrl}
 
-
-# Stop Unicorn Service
-gitlab-ctl stop unicorn
-
-# Stop Sidekiq
-gitlab-ctl stop sidekiq
-
-# Stop Nginx
-gitlab-ctl stop nginx
-
-# Create a backup
-gitlab-rake gitlab:backup:create
-
-
 # Install the new version
 dpkg -i ${fileName}
 
-# Re-Configure GitLab
-gitlab-ctl reconfigure
-
-# Restart Services
-gitlab-ctl restart
 
 # Remove downloaded .deb file
 rm ${fileName}
